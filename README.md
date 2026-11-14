@@ -16,9 +16,10 @@ Economy and territory integrations are optional by design and must use public ru
 
 ## Requirements
 
-- JDK 25 installed as the compilation toolchain
-- JDK 21–24 as `JAVA_HOME` to launch the bundled Gradle 8.14.3 wrapper (the wrapper then locates JDK 25)
-- Paper/Folia 26.3 or compatible server API
+- Java 25
+- Paper/Folia 26.1.2
+
+The project pins `io.papermc.paper:paper-api:26.1.2.build.74-stable`; dynamic or experimental Paper builds are not used.
 
 ## Build
 

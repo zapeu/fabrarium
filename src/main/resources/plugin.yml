@@ -2,7 +2,7 @@ name: Fabrarium
 version: '${version}'
 main: net.zedaris.fabrarium.FabrariumPlugin
 description: Progressao tecnologica, maquinas e metalurgia de Zedrium do ZeDaris.
-api-version: '1.21'
+api-version: '26.1.2'
 folia-supported: true
 authors: [ZeDaris]
 commands:

@@ -56,7 +56,7 @@ public final class RecipeCatalog {
         FurnaceRecipe ingot = new FurnaceRecipe(
                 ingotKey,
                 required(CustomItems.ZEDRIUM_INGOT, 1),
-                RecipeChoice.exactChoice(required(CustomItems.ZEDRIUM_DUST, 1)),
+                new RecipeChoice.ExactChoice(required(CustomItems.ZEDRIUM_DUST, 1)),
                 0.8f,
                 160);
         server.addRecipe(ingot);
@@ -64,7 +64,7 @@ public final class RecipeCatalog {
         NamespacedKey coreKey = key("zedrium_core");
         ShapedRecipe core = new ShapedRecipe(coreKey, required(CustomItems.ZEDRIUM_CORE, 1));
         core.shape(" I ", "IRI", " I ");
-        core.setIngredient('I', RecipeChoice.exactChoice(required(CustomItems.ZEDRIUM_INGOT, 1)));
+        core.setIngredient('I', new RecipeChoice.ExactChoice(required(CustomItems.ZEDRIUM_INGOT, 1)));
         core.setIngredient('R', Material.REDSTONE_BLOCK);
         server.addRecipe(core);
     }

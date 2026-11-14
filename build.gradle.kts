@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:26.3.build.218-stable")
+    compileOnly("io.papermc.paper:paper-api:26.1.2.build.74-stable")
 
     implementation("org.xerial:sqlite-jdbc:3.49.1.0")
     implementation("org.postgresql:postgresql:42.7.5")
