@@ -1,0 +1,9 @@
+database:
+  # Vazio usa SQLite em plugins/Fabrarium/fabrarium.db.
+  # PostgreSQL: jdbc:postgresql://localhost:5432/zedaris
+  url: ''
+  username: ''
+  password: ''
+  driver: ''
+machine:
+  processing-seconds: 8

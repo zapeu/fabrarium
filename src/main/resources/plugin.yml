@@ -1,0 +1,16 @@
+name: Fabrarium
+version: '${version}'
+main: net.zedaris.fabrarium.FabrariumPlugin
+description: Progressao tecnologica, maquinas e metalurgia de Zedrium do ZeDaris.
+api-version: '1.21'
+folia-supported: true
+authors: [ZeDaris]
+commands:
+  fabrarium:
+    description: Consulta a progressao e os itens de Fabrarium.
+    usage: /fabrarium [guia|progresso|dar <item>]
+    aliases: [fab, tecnologia]
+permissions:
+  fabrarium.admin:
+    description: Permite entregar itens tecnologicos.
+    default: op
