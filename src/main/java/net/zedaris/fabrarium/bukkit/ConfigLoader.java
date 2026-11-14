@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 import net.zedaris.fabrarium.persistence.DatabaseSettings;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -21,7 +20,7 @@ public final class ConfigLoader {
             if (Files.notExists(configPath)) {
                 try (InputStream resource = plugin.getResource("config.yml")) {
                     if (resource == null) throw new IllegalStateException("bundled config.yml is missing");
-                    Files.copy(resource, configPath, StandardCopyOption.COPY_ATTRIBUTES);
+                    copyDefaultConfig(resource, configPath);
                 }
             }
         } catch (IOException exception) {
@@ -40,5 +39,11 @@ public final class ConfigLoader {
                 config.getString("database.driver", ""));
         long processingSeconds = Math.max(1, config.getLong("machine.processing-seconds", 8));
         return new PluginSettings(database, Duration.ofSeconds(processingSeconds));
+    }
+
+    static void copyDefaultConfig(InputStream resource, Path configPath) throws IOException {
+        // Input streams from a plugin JAR do not expose portable filesystem attributes.
+        // COPY_ATTRIBUTES fails on some container/overlay filesystems used by Pterodactyl.
+        Files.copy(resource, configPath);
     }
 }
